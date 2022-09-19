@@ -54,3 +54,37 @@ for (let link of links) {
   link.addEventListener("click", titleClickHandler);
 }
 console.log(links);
+
+const optArticleSelector = ".post",
+  optTitleSelector = ".post-title",
+  optTitleListSelector = ".titles";
+
+function generateTitleLinks() {
+  /* remove contents of titleList */
+
+  const titleList = document.querySelector(optTitleListSelector);
+
+  titleList.innerHTML = "";
+  console.log(titleList);
+
+  /* for each article */
+
+  const articles = document.querySelectorAll(optArticleSelector);
+
+  for (let article of articles) {
+    const articleId = document.getElementById("article");
+    console.log(articleId);
+  }
+
+  /* get the article id odczytaj jego id i zapisz je do stałej*/
+
+  /* find the title element znajdź element z tytułem i zapisz jego zawartość do stałej*/
+
+  /* get the title from the title element na podstawie tych informacji stwórz kod HTML linka i zapisz go do stałej*/
+
+  /* create HTML of the link wstaw stworzony kod HTML do listy linków w lewej kolumnie*/
+
+  /* insert link into titleList */
+}
+
+generateTitleLinks();
