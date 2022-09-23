@@ -61,30 +61,77 @@ const optArticleSelector = ".post",
 
 function generateTitleLinks() {
   /* remove contents of titleList */
-
   const titleList = document.querySelector(optTitleListSelector);
-
   titleList.innerHTML = "";
-  console.log(titleList);
 
   /* for each article */
-
   const articles = document.querySelectorAll(optArticleSelector);
 
+  let html = "";
+  console.log(html);
+
   for (let article of articles) {
-    const articleId = document.getElementById("article");
-    console.log(articleId);
+    /* get the article id - odczytaj jego id i zapisz je do stałej */
+    const articleId = article.getAttribute("id");
+
+    /* find the title element - znajdź element z tytułem i zapisz jego zawartość do stałej*/
+    const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+
+    /* get the title from the title element - na podstawie tych informacji stwórz kod HTML linka i zapisz go do stałej */
+    const linkHTML =
+      '<li><a href="#' +
+      articleId +
+      '"><span>' +
+      articleTitle +
+      "</span></a></li>";
+
+    console.log(linkHTML);
+
+    /* insert link into titleList */
+    html = html + linkHTML;
   }
-
-  /* get the article id odczytaj jego id i zapisz je do stałej*/
-
-  /* find the title element znajdź element z tytułem i zapisz jego zawartość do stałej*/
-
-  /* get the title from the title element na podstawie tych informacji stwórz kod HTML linka i zapisz go do stałej*/
-
-  /* create HTML of the link wstaw stworzony kod HTML do listy linków w lewej kolumnie*/
-
-  /* insert link into titleList */
+  titleList.innerHTML = html;
 }
 
 generateTitleLinks();
+
+// function generateTitleLinks() {
+//   /* remove contents of titleList */
+
+//   /* pobieramy liste linkow do artykulu, sekcja z lewej */
+//   const titleList = document.querySelector(optTitleListSelector);
+
+//   titleList.innerHTML = "";
+//   console.log(titleList);
+
+//   /* for each article - pobieramy kazdy artykul*/
+//   const articles = document.querySelectorAll(optArticleSelector);
+
+//   let html = "";
+
+//   for (let article of articles) {
+//     /* get the article id odczytaj jego id i zapisz je do stałej*/
+
+//     const articleId = article.getAttribute("id");
+//     /* find the title element znajdź element z tytułem i zapisz jego zawartość do stałej*/
+//     /* get the title from the title element na podstawie tych informacji stwórz kod HTML linka i zapisz go do stałej*/
+//     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+//     const linkHTML =
+//       '<li><a href="#' +
+//       articleId +
+//       '"><span>' +
+//       articleTitle +
+//       "</span></a></li>";
+
+//     /* create HTML of the link wstaw stworzony kod HTML do listy linków w lewej kolumnie*/
+//     titleList.innerHTML = titleList.innerHTML + linkHTML;
+//     console.log(articleTitle);
+
+//     /* insert link into titleList */
+//     html = html + linkHTML;
+//   }
+
+//   titleList.innerHTML = html;
+// }
+
+// generateTitleLinks();
