@@ -1,10 +1,5 @@
 "use strict";
 
-// document.getElementById("test-button").addEventListener("click", function () {
-//   const links = document.querySelectorAll(".titles a");
-//   console.log(links);
-// });
-
 const titleClickHandler = function (event) {
   event.preventDefault();
 
@@ -100,44 +95,3 @@ function generateTitleLinks() {
 }
 
 generateTitleLinks();
-
-// function generateTitleLinks() {
-//   /* remove contents of titleList */
-
-//   /* pobieramy liste linkow do artykulu, sekcja z lewej */
-//   const titleList = document.querySelector(optTitleListSelector);
-
-//   titleList.innerHTML = "";
-//   console.log(titleList);
-
-//   /* for each article - pobieramy kazdy artykul*/
-//   const articles = document.querySelectorAll(optArticleSelector);
-
-//   let html = "";
-
-//   for (let article of articles) {
-//     /* get the article id odczytaj jego id i zapisz je do stałej*/
-
-//     const articleId = article.getAttribute("id");
-//     /* find the title element znajdź element z tytułem i zapisz jego zawartość do stałej*/
-//     /* get the title from the title element na podstawie tych informacji stwórz kod HTML linka i zapisz go do stałej*/
-//     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
-//     const linkHTML =
-//       '<li><a href="#' +
-//       articleId +
-//       '"><span>' +
-//       articleTitle +
-//       "</span></a></li>";
-
-//     /* create HTML of the link wstaw stworzony kod HTML do listy linków w lewej kolumnie*/
-//     titleList.innerHTML = titleList.innerHTML + linkHTML;
-//     console.log(articleTitle);
-
-//     /* insert link into titleList */
-//     html = html + linkHTML;
-//   }
-
-//   titleList.innerHTML = html;
-// }
-
-// generateTitleLinks();
