@@ -43,13 +43,6 @@ const titleClickHandler = function (event) {
   targetArticle.classList.add("active");
 };
 
-const links = document.querySelectorAll(".titles a");
-
-for (let link of links) {
-  link.addEventListener("click", titleClickHandler);
-}
-console.log(links);
-
 const optArticleSelector = ".post",
   optTitleSelector = ".post-title",
   optTitleListSelector = ".titles";
